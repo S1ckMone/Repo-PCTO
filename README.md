@@ -21,4 +21,4 @@
 
 ##NOTA BENE
 
-I file inseriti sono solamente delle versioni in development, e non rappresentano in alcun modo il prodotto finale
+I file inseriti sono solamente delle versioni in development, e non rappresentano in alcun modo il prodotto finale.
