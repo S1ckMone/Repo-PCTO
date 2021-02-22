@@ -21,3 +21,8 @@
 
 ## NOTA BENE:
 I file inseriti sono solamente delle versioni in development, e non rappresentano in alcun modo il prodotto finale.
+
+## Suddivisione compiti
+> Principi Simone: Referente gruppo, Creazione API Gateway e Codifica funzioni Lambda per l'inserimento dei dati nel database
+> Maroni Michele: Creazione Database e Formattazione del ReadME
+> Silveri Gianmaria: Simulazione dei dati e Invio all'API.
