@@ -19,6 +19,23 @@
 >
 > I dati devono essere «credibili»
 
+## Sviluppo
+> Come prima cosa si è creato un database denominato "lavoro PTCO".
+> Successivamente si sono create 2 tabelle (sensor_status, sensor_value) le quali contengono i seguenti campi:
+> 1. sensor_status
+> * Id: (serial) Chiave autoincrementata.
+> * Localization: (geometry) Latitudine e longitudine della posizione del sensore.
+> * Field: (int) Numero del campo in cui si trova il sensore.
+> 
+> 2. sensor_values
+> * Id: (serial) Chiave autoincrementata, questa volta si riferisce all'Id dei valori
+> * VWC: (float) Contenuto volumetrico dell'acqua.
+> * GT: (float) Temperatura del terreno.
+> * ET: (float) Temperatura dell'ambiente.
+> * EU: (numeric) Umidità ambientale.
+> * Acquisition: (timestamp) orario di acquisizione del dato.
+> * FK_Id: (serial) chiave esterna collegata alla chiave Id di sensor_status: viene importata questa chiave esterna poichè la relazione tra le tabelle è 1 a N.
+
 ## NOTA BENE:
 I file inseriti sono solamente delle versioni in development, e non rappresentano in alcun modo il prodotto finale.
 
