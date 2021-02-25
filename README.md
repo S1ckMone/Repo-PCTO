@@ -39,6 +39,10 @@
 >La tabella *sensor_status* si occupa della posizione del sensore e in quale campo è situato, questa tabella è stata creata per evitare la ridondanza dei dati di posizione inseriti all'interno della tabella ogni volta che si rilevava il dato.
 >
 >La tabella *sensor_value* si occupa, invece, dell'immagazzinamento dei dati tecnici relativi ai valori misurati.
+>
+## Suddivisione delle ore di lavoro
+> * 01/02/2021-06/02/2021: periodo di formazione su linguaggio Python e sul funzionamento del Cloud.
+> * 08/02/2021-13/02/2021: 
 
 ## NOTA BENE:
 I file inseriti sono solamente delle versioni in development, e non rappresentano in alcun modo il prodotto finale.
