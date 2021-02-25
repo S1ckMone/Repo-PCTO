@@ -1,5 +1,26 @@
 # Progetto PCTO 
 
+# PCTO2021: Approccio serverless al processamento di dati provenienti da sensori 
+
+## Obiettivi del progetto
+
+## Architettura (componenti software/hardware e loro interazione)
+### Elenco dei tool che utilizzate (non deve essere un tutorial, piuttosto usate link esterni)
+## Simulazione in Python dei dati necessari all'applicazione
+## Struttura del database: schema ER e schema logico, eventuali vincoli di integrità referenziale
+## Lamba function per il data injection e per l’elaborazione dei dati nel database
+## Spiegate il ruolo del HTTP o MQTT o IoT Core a seconda della tematica
+## Stato di avanzamento del progetto e sviluppi futuri
+
+## Considerazioni finali
+
+## Il gruppo di lavoro
+
+
+
+
+
+
 ## Tema 1
 > Creare un software in python che possa simulare dei nodi dove ogni nodo
 > misura:
