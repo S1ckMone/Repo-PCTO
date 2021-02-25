@@ -3,25 +3,6 @@
 # PCTO2021: Approccio serverless al processamento di dati provenienti da sensori 
 
 ## Obiettivi del progetto
-
-## Architettura (componenti software/hardware e loro interazione)
-### Elenco dei tool che utilizzate (non deve essere un tutorial, piuttosto usate link esterni)
-## Simulazione in Python dei dati necessari all'applicazione
-## Struttura del database: schema ER e schema logico, eventuali vincoli di integrità referenziale
-## Lamba function per il data injection e per l’elaborazione dei dati nel database
-## Spiegate il ruolo del HTTP o MQTT o IoT Core a seconda della tematica
-## Stato di avanzamento del progetto e sviluppi futuri
-
-## Considerazioni finali
-
-## Il gruppo di lavoro
-
-
-
-
-
-
-## Tema 1
 > Creare un software in python che possa simulare dei nodi dove ogni nodo
 > misura:
 > - contenuto volumetrico di acqua (valori compresi tra 0 ed 1)
@@ -39,6 +20,33 @@
 > Ogni nodo invia i dati ogni x minuti all’API gateway
 >
 > I dati devono essere «credibili»
+> 
+## Architettura (componenti software/hardware e loro interazione)
+> Elenco architettature utilizzate:
+> * Postgrees
+> * Python
+
+### Elenco dei tool che utilizzate (non deve essere un tutorial, piuttosto usate link esterni)
+> * Visual Studio code https://code.visualstudio.com/
+> * DBeaver https://dbeaver.io/
+> * AWS https://aws.amazon.com/it/
+> * GitHub https://github.com/
+>
+## Simulazione in Python dei dati necessari all'applicazione
+>
+## Struttura del database: schema ER e schema logico, eventuali vincoli di integrità referenziale
+>
+## Lamba function per il data injection e per l’elaborazione dei dati nel database
+## Spiegazione del ruolo del HTTP:
+>
+## Stato di avanzamento del progetto e sviluppi futuri
+
+## Considerazioni finali
+
+## Il gruppo di lavoro
+> Principi Simone: Referente gruppo, Creazione API Gateway e Codifica funzioni Lambda per l'inserimento dei dati nel database
+> Maroni Michele: Creazione Database e Formattazione del ReadME
+> Silveri Gianmaria: Simulazione dei dati e Invio all'API.
 
 ## Sviluppo
 > Come prima cosa si è creato un database denominato "lavoro PTCO".
