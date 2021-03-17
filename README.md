@@ -84,7 +84,12 @@
 >
 ## Lamba function per il data injection e per l’elaborazione dei dati nel database
 ## Stato di avanzamento del progetto e sviluppi futuri
-
+> * Simulazione dati: *terminato.*
+> * Sviluppo API: *terminato.*
+> * Sviluppo LAMBDA function: *terminato.*
+> * Creazione database: *terminato.*
+> * Visualizzazione dei dati nel database: *terminato.*
+> * Implementazione di Amazon Alexa: *non terminato.*
 ## Considerazioni finali
 
 ## Il gruppo di lavoro
