@@ -83,8 +83,6 @@
 > eu : enviromental umidity, umidita' ambiente.
 >
 ## Lamba function per il data injection e per l’elaborazione dei dati nel database
-## Spiegazione del ruolo del HTTP:
->
 ## Stato di avanzamento del progetto e sviluppi futuri
 
 ## Considerazioni finali
