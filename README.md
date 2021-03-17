@@ -62,8 +62,8 @@
 > Lo schema logico non fa altro che prendere il concetto di schema E-R e rappresentarlo in modo grafico.  
 > Nel Database che abbiamo sviluppato il modello E-R sviluppato si presenta come tale:  
 >   
-> Sensor_status(**id**, localitazion, field)  
-> Sensor_values(**sensor_id**, *fk_id*, vwc, gt, et, eu)
+>     Sensor_status(**id**, localitazion, field)  
+>     Sensor_values(**sensor_id**, *fk_id*, vwc, gt, et, eu)
 > 
 > In questo schema possiamo notare la relazione che sussiste tra le due entita' :
 > 
