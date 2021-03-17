@@ -34,7 +34,7 @@
 > * GitHub https://github.com/
 >
 ## Simulazione in Python dei dati necessari all'applicazione
-> Per il programma di simulazione si creano randomicamente tre temperature ambientali (1 per campo), la prima è compresa tra -2 e 15 gradi, la seconda e la terza aggiungono una variazione alla prima. Con la funzione "Schedule" si richiama ogni minuto la funzione "noods_identifier" il cui scopo è quello di individuare il numero dei sensori e il campo di appartenenza. Il risultato di questa funzione viene inviato a un'altra funzione che simula i dati per ogni singolo sensore e vengono tradotti in dizionari. Infine questo dizionario viene trasformato in formato Json che verrà successivamente inviato all'API.
+> Per il programma di simulazione si creano randomicamente tre temperature ambientali (1 per campo), la prima è compresa tra -2 e 15 gradi, la seconda e la terza aggiungono una variazione alla prima. Con la funzione "Schedule" si richiama ogni minuto la funzione "nodes_identifier" il cui scopo è quello di individuare il numero dei sensori e il campo di appartenenza. Il risultato di questa funzione viene inviato a un'altra funzione che simula i dati per ogni singolo sensore e vengono tradotti in dizionari. Infine questo dizionario viene trasformato in formato Json che verrà successivamente inviato all'API.
 > 
 > *Funzione schedule* 
 > 
@@ -54,6 +54,33 @@
 >     headers = {'content-type': 'application/json'}
 >     x = requests.post("https://k1lcrvj5x8.execute-api.us-east-1.amazonaws.com/dev/field/stats", json_data, headers) 
 ## Struttura del database: schema ER e schema logico, eventuali vincoli di integrità referenziale
+> In informatica, nell'ambito della progettazione dei database, il modello entity-relationship (detto anche schema E-R;  
+> in italiano) è un modello teorico per la rappresentazione concettuale e grafica dei dati.  
+> Tale diagramma e' composto da : entita', ovvero classi di oggetti (fatti, cose, persone, ...) che hanno proprietà comuni ed esistenza autonoma ai  
+> fini dell'applicazione di interesse; associazioni ( o relazioni), che rappresentano un legame tra due o più entità tramite chiavi primarie o esterne ;  
+> Attributi, che vanno a definire il livello di dettaglio con cui vogliamo rappresentare un' entita'.  
+> Lo schema logico non fa altro che prendere il concetto di schema E-R e rappresentarlo in modo grafico.  
+> Nel Database che abbiamo sviluppato il modello E-R sviluppato si presenta come tale:  
+>   
+> Sensor_status(**id**, localitazion, field)  
+> Sensor_values(**sensor_id**, *fk_id*, vwc, gt, et, eu)
+> 
+> In questo schema possiamo notare la relazione che sussiste tra le due entita' :
+> 
+> La prima entita' dotata di attributi quali :
+> id : Chiave primaria ed id del sensore
+> localization : Coordinate del sensore
+> field : Campo in cui e' posizionato il sensore
+> 
+> ![modelloersus](/assets/images/modello_er.PNG)
+>
+> La seconta entita' e' dotati di attributi quali :
+> sensor id : chiave primaria della seconda entita', visualizza sempre l'id del sensore
+> fk_id : chiave esterna della seconda entita', legata alla chiave primaria di sensor_status
+> vwc : volumetric water content, contenuto volumetrico dell'acqua
+> gt : ground temperature, temperatura del terreno in cui e' presente il sensore
+> et : enviromental temperature, temperatura ambiente
+> eu : enviromental umidity, umidita' ambiente.
 >
 ## Lamba function per il data injection e per l’elaborazione dei dati nel database
 ## Spiegazione del ruolo del HTTP:
@@ -68,12 +95,12 @@
 > Silveri Gianmaria: Simulazione dei dati e Invio all'API.
 
 ## Sviluppo
-> Come prima cosa si è creato un database denominato "lavoro PTCO".
-> Successivamente si sono create 2 tabelle (*sensor_status, sensor_value*) le quali contengono i seguenti campi:
-> 1. *sensor_status*
-> * Id: (serial) Chiave autoincrementata.
-> * Localization: (geometry) Latitudine e longitudine della posizione del sensore.
-> * Field: (int) Numero del campo in cui si trova il sensore.
+> Come prima cosa si è creato un database denominato "lavoro PTCO".  
+> Successivamente si sono create 2 tabelle (*sensor_status, sensor_value*) le quali contengono i seguenti campi:  
+> 1. *sensor_status*  
+> * Id: (serial) Chiave autoincrementata.  
+> * Localization: (geometry) Latitudine e longitudine della posizione del sensore.  
+> * Field: (int) Numero del campo in cui si trova il sensore.  
 > 
 > 2. *sensor_values*
 > * Id: (serial) Chiave autoincrementata, questa volta si riferisce all'Id dei valori
