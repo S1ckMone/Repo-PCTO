@@ -54,33 +54,45 @@
 >     headers = {'content-type': 'application/json'}
 >     x = requests.post("https://k1lcrvj5x8.execute-api.us-east-1.amazonaws.com/dev/field/stats", json_data, headers) 
 ## Struttura del database: schema ER e schema logico, eventuali vincoli di integrità referenziale
-> In informatica, nell'ambito della progettazione dei database, il modello entity-relationship (detto anche schema E-R;  
-> in italiano) è un modello teorico per la rappresentazione concettuale e grafica dei dati.  
-> Tale diagramma e' composto da : entita', ovvero classi di oggetti (fatti, cose, persone, ...) che hanno proprietà comuni ed esistenza autonoma ai  
-> fini dell'applicazione di interesse; associazioni ( o relazioni), che rappresentano un legame tra due o più entità tramite chiavi primarie o esterne ;  
-> Attributi, che vanno a definire il livello di dettaglio con cui vogliamo rappresentare un' entita'.  
-> Lo schema logico non fa altro che prendere il concetto di schema E-R e rappresentarlo in modo grafico.  
-> Nel Database che abbiamo sviluppato il modello E-R sviluppato si presenta come tale:  
+> In informatica, nell'ambito della progettazione dei database, il modello entity-relationship (detto anche schema E-R;in italiano)    
+> è un modello teorico per la rappresentazione concettuale e grafica dei dati.  
+> Tale diagramma e' composto da :  <br/>
+> *Entita'*
+> 
+>       Classi di oggetti (fatti, cose, persone, ...) che hanno proprietà comuni ed esistenza autonoma ai
+>       
+>       fini dell'applicazione di interesse;  <br/> 
+> *Associazioni*
+> 
+>       Relazioni, che rappresentano un legame tra due o più entità tramite chiavi primarie o esterne;  <br/>    
+> 
+> *Attributi* 
+> 
+>       che vanno a definire il livello di dettaglio con cui vogliamo rappresentare un' entita'.  <br/>  
+>         
+>       Lo schema logico non fa altro che prendere il concetto di schema E-R e rappresentarlo in modo grafico. 
+>          
+>Nel Database che abbiamo sviluppato il modello E-R sviluppato si presenta come tale:    
 >   
->     Sensor_status(**id**, localitazion, field)  
->     Sensor_values(**sensor_id**, *fk_id*, vwc, gt, et, eu)
-> 
-> In questo schema possiamo notare la relazione che sussiste tra le due entita' :
-> 
-> La prima entita' dotata di attributi quali :
-> id : Chiave primaria ed id del sensore
-> localization : Coordinate del sensore
-> field : Campo in cui e' posizionato il sensore
-> 
+>     Sensor_status(**id**, localitazion, field)    
+>     Sensor_values(**sensor_id**, *fk_id*, vwc, gt, et, eu)  
+>   
+> In questo schema possiamo notare la relazione che sussiste tra le due entita' :  
+>   
+> La prima entita' dotata di attributi quali :  
+> id : Chiave primaria ed id del sensore  
+> localization : Coordinate del sensore  
+> field : Campo in cui e' posizionato il sensore  
+>   
 > ![modelloersus](/assets/images/modello_er.PNG)
->
-> La seconta entita' e' dotati di attributi quali :
-> sensor id : chiave primaria della seconda entita', visualizza sempre l'id del sensore
-> fk_id : chiave esterna della seconda entita', legata alla chiave primaria di sensor_status
-> vwc : volumetric water content, contenuto volumetrico dell'acqua
-> gt : ground temperature, temperatura del terreno in cui e' presente il sensore
-> et : enviromental temperature, temperatura ambiente
-> eu : enviromental umidity, umidita' ambiente.
+>  
+> La seconta entita' e' dotati di attributi quali :  
+> sensor id : chiave primaria della seconda entita', visualizza sempre l'id del sensore  
+> fk_id : chiave esterna della seconda entita', legata alla chiave primaria di sensor_status  
+> vwc : volumetric water content, contenuto volumetrico dell'acqua  
+> gt : ground temperature, temperatura del terreno in cui e' presente il sensore  
+> et : enviromental temperature, temperatura ambiente  
+> eu : enviromental umidity, umidita' ambiente.  
 >
 ## Lamba function per il data injection e per l’elaborazione dei dati nel database
 ## Stato di avanzamento del progetto e sviluppi futuri
