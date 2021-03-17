@@ -25,6 +25,7 @@
 > Elenco architettature utilizzate:
 > * Postgrees
 > * Python
+> * Lambda
 
 ### Elenco dei tool che utilizzate (non deve essere un tutorial, piuttosto usate link esterni)
 > * Visual Studio code https://code.visualstudio.com/
@@ -33,7 +34,25 @@
 > * GitHub https://github.com/
 >
 ## Simulazione in Python dei dati necessari all'applicazione
->
+> Per il programma di simulazione si creano randomicamente tre temperature ambientali (1 per campo), la prima è compresa tra -2 e 15 gradi, la seconda e la terza aggiungono una variazione alla prima. Con la funzione "Schedule" si richiama ogni minuto la funzione "noods_identifier" il cui scopo è quello di individuare il numero dei sensori e il campo di appartenenza. Il risultato di questa funzione viene inviato a un'altra funzione che simula i dati per ogni singolo sensore e vengono tradotti in dizionari. Infine questo dizionario viene trasformato in formato Json che verrà successivamente inviato all'API.
+> 
+> *Funzione schedule* 
+> 
+>     schedule.every(1).minutes.do(nodes_identifier)   
+>    
+>     while True:
+>     
+>     schedule.run_pending()
+>     
+> *Query per la visualizzazione dei sensori*
+> 
+>     query = "select id, field from sensor_status"
+>     
+> *Conversione da dizionazio a Json e invio all'API*
+> 
+>     json_data = json.dumps(data)
+>     headers = {'content-type': 'application/json'}
+>     x = requests.post("https://k1lcrvj5x8.execute-api.us-east-1.amazonaws.com/dev/field/stats", json_data, headers) 
 ## Struttura del database: schema ER e schema logico, eventuali vincoli di integrità referenziale
 >
 ## Lamba function per il data injection e per l’elaborazione dei dati nel database
