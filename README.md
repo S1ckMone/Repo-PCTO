@@ -95,6 +95,10 @@
 > eu : enviromental umidity, umidita' ambiente.  
 >
 ## Lamba function per il data injection e per l’elaborazione dei dati nel database
+> Sono presenti nel nostro progetto 3 lambda function, ognuna con una funzione specifica:
+> * database_insert, la prima delle 3, che ha il compito di riconvertire il json ricevuto in dizionario, e inserire i singoli campi all'interno della tabella sensor_values del database;
+> * database_nodes che, ricevendo il campo da un progranmma in python, seleziona da sensor_status l'id di ogni singolo sensore, e li manda indietro al programma;
+> * stats_retriever, che, dopo aver ricevuto gli id dal programma, calcola con una query il minimo, massimo e media di ogni singolo elemento, ovvero vwc, gt, et e eu.
 ## Stato di avanzamento del progetto e sviluppi futuri
 > * Simulazione dati: *terminato.*
 > * Sviluppo API: *terminato.*
