@@ -19,10 +19,6 @@ def data_sender_get(data):
     return x.text
 
 data = {}
-vwc = {}
-gt = {}
-eu = {}
-et = {}
 k=0
 while(k==0):
     field = int(input("inserisci campo (1,2,3) = "))
@@ -38,7 +34,13 @@ data["time"] = date_now
 data2 = data_sender_values(data)
 data2 = json.loads(data2)
 values = data_sender_get(data2)
-et = values["et"]
-gt = values["gt"]
-vwc = values["vwc"]
-eu = values["eu"]
+values = json.loads(values)
+et = json.loads(values["et"])
+gt = json.loads(values["gt"])
+vwc = json.loads(values["vwc"])
+eu = json.loads(values["eu"])
+print("Minimo, massimo e media (in ordine) dei valori:")
+print("1) Temperatura ambientale = ",et["min"] ," , ",et["max"]," , ",et["avg"])
+print("2) Temperatura del suolo = ",gt["min"] ," , ",gt["max"]," , ",gt["avg"])
+print("3) Umidità relativa = ",eu["min"] ," , ",eu["max"]," , ",eu["avg"])
+print("4) Contenuto volumetrico d'acqua= ",vwc["min"] ," , ",vwc["max"]," , ",vwc["avg"])
