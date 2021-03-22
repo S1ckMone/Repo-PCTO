@@ -105,7 +105,7 @@
 > * Sviluppo LAMBDA function: *terminato.*
 > * Creazione database: *terminato.*
 > * Visualizzazione dei dati nel database: *terminato.*
-> * Implementazione di Amazon Alexa: *non terminato.*
+> * Implementazione di Amazon Alexa: *terminato.*
 ## Considerazioni finali
 
 ## Il gruppo di lavoro
