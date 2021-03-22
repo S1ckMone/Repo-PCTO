@@ -1,6 +1,5 @@
 import json
 import random
-import numpy
 import schedule
 import requests
 import psycopg2 as pg
@@ -11,7 +10,7 @@ def base_temperature(et):
     return et
 
 
-def nodes_identifier():
+def nodes_identifier():        #prima funzione richiamata
     record = db_connection()
     for i in record:
         id_s = i[0]
@@ -19,7 +18,7 @@ def nodes_identifier():
         risult(id_s, field)
 
 
-def db_connection():                #Connessione al database e selezione di id e campo del sensore
+def db_connection():                #Connessione al database e selezione di id e campo del sensore / seconda funzione richiamata
     conn = pg.connect(
         host="db-gruppo-5.cykdo1jweq0j.us-east-1.rds.amazonaws.com",
         database="lavoropcto",
@@ -64,13 +63,12 @@ def risult(id_s, field):
 def data_sender_values(data):
     json_data = json.dumps(data)
     headers = {'content-type': 'application/json'}
-    print(json_data)
     x = requests.post("https://k1lcrvj5x8.execute-api.us-east-1.amazonaws.com/dev/field/stats", json_data, headers)
 
 et_1 = round(random.uniform(-2, 15), 2)
 et_2 = round(random.uniform(et_1-5, et_1+5), 2)
 et_3 = round(random.uniform(et_1-7, et_1+7), 2)
-schedule.every(5).seconds.do(nodes_identifier)    #ripetizione ciclica della funzione nodes_identifier
+schedule.every(1).minutes.do(nodes_identifier)    #ripetizione ciclica della funzione nodes_identifier
 while True:
     schedule.run_pending()
 
